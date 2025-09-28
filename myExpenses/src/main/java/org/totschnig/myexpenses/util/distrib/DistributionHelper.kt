@@ -3,6 +3,7 @@ package org.totschnig.myexpenses.util.distrib
 import android.content.Context
 import org.totschnig.myexpenses.BuildConfig
 import java.time.format.DateTimeFormatter
+import java.time.LocalDate
 
 object DistributionHelper {
     @JvmStatic
@@ -19,7 +20,7 @@ object DistributionHelper {
 
     @JvmStatic
     val distribution: Distribution
-        get() = Distribution.valueOf(BuildConfig.DISTRIBUTION)
+        get() = Distribution.valueOf(org.totschnig.myexpenses.util.BuildConstants.DISTRIBUTION)
 
     @JvmStatic
     val distributionAsString: String
@@ -51,7 +52,7 @@ object DistributionHelper {
 
     @JvmStatic
     val buildDateFormatted: String =
-        DateTimeFormatter.ofPattern("yyyyMMdd-HHmm").format(BuildConfig.BUILD_DATE)
+        DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDate.parse(org.totschnig.myexpenses.util.BuildConstants.BUILD_DATE))
 
     /**
      * @return version number (versionCode)

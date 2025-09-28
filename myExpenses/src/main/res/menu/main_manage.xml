@@ -18,4 +18,5 @@
         android:id="@id/DYNAMIC_EXCHANGE_RATE_COMMAND"
         android:checkable="true"
         android:title="@string/dynamic_exchange_rate" />
+
 </menu>

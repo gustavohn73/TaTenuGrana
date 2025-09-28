@@ -75,6 +75,8 @@ import java.util.function.Consumer
 import javax.inject.Inject
 import com.google.firebase.FirebaseApp
 import org.totschnig.myexpenses.firebase.FirebaseSync
+import org.totschnig.myexpenses.sync.DatabaseProviderFactory
+import org.totschnig.myexpenses.firebase.FirebaseProvider
 
 open class MyApplication : Application(), SharedPreferences.OnSharedPreferenceChangeListener,
     DefaultLifecycleObserver {
@@ -172,11 +174,20 @@ open class MyApplication : Application(), SharedPreferences.OnSharedPreferenceCh
                     uriPermission
                 )
             })
+
         }
         FirebaseApp.initializeApp(this)
+        initializeDatabaseProviders()
     
         android.util.Log.i("TaTenuGrana", 
         "Ta Tenu Grana iniciado - baseado em MyExpenses por Michael Totschnig")
+    }
+
+    private fun initializeDatabaseProviders() {
+        // Sempre registrar Firebase como opção - sem verificar classpath
+        DatabaseProviderFactory.registerProvider("Firebase", FirebaseProvider())
+
+        // Outros provedores futuros
     }
 
     override fun onStart(owner: LifecycleOwner) {

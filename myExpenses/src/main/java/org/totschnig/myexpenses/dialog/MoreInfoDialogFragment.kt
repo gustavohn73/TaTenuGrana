@@ -70,7 +70,7 @@ class MoreInfoDialogFragment : DialogViewBinding<MoreInfoBinding>() {
         }
 
         //noinspection SetTextI18n
-        binding.copyRight.text = "© 2011 - ${BuildConfig.BUILD_DATE.year} Michael Totschnig"
+        binding.copyRight.text = "© 2011 -  Michael Totschnig"
         return builder.setTitle(R.string.pref_more_info_dialog_title)
             .setPositiveButton(android.R.string.ok, null)
             .create()

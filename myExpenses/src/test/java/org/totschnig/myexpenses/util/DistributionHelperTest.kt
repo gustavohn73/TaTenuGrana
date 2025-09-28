@@ -15,7 +15,7 @@ import java.util.*
 class DistributionHelperTest {
     @Test
     fun distributionShouldBeTakenUpFromBuildConfig() {
-        Assert.assertEquals(distributionAsString, BuildConfig.DISTRIBUTION)
+        Assert.assertEquals(distributionAsString, org.totschnig.myexpenses.util.BuildConstants.DISTRIBUTION)
     }
 
     @Test
@@ -34,7 +34,7 @@ class DistributionHelperTest {
         val expected = String.format(
             Locale.ROOT, "%s (%d) %s %s %s",
             BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, buildDateFormatted,
-            BuildConfig.DISTRIBUTION, playInstaller
+            org.totschnig.myexpenses.util.BuildConstants.DISTRIBUTION, playInstaller
         )
         Assert.assertEquals(expected, versionInfo)
     }
@@ -49,7 +49,7 @@ class DistributionHelperTest {
         val expected = String.format(
             Locale.ROOT, "%s (%d) %s %s null",
             BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, buildDateFormatted,
-            BuildConfig.DISTRIBUTION
+            org.totschnig.myexpenses.util.BuildConstants.DISTRIBUTION
         )
         Assert.assertEquals(expected, versionInfo)
     }

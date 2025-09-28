@@ -2,8 +2,10 @@ package org.totschnig.myexpenses.firebase
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
-import org.totschnig.myexpenses.model.Account
+import com.google.firebase.auth.FirebaseUser
 import org.totschnig.myexpenses.model.Transaction
+import org.totschnig.myexpenses.sync.SyncConfiguration
+import org.totschnig.myexpenses.sync.DatabaseProvider
 
 class FirebaseSync private constructor() {
     

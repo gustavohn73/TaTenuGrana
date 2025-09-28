@@ -5,7 +5,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-//        classpath 'com.jakewharton.hugo:hugo-plugin:1.2.2-SNAPSHOT'
+        classpath 'com.android.tools.build:gradle:8.1.4'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'
+        classpath 'com.google.gms:google-services:4.4.1'
     }
 }
 
@@ -354,7 +356,7 @@ static def getDate() {
 //apply plugin: 'com.jakewharton.hugo'
 
 //For Drive
-//apply plugin: 'com.google.gms.google-services'
+// apply plugin: 'com.google.gms.google-services'
 
 tasks.register('echoPublishTag') {
     doLast {
